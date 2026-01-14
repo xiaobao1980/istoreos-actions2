@@ -82,6 +82,9 @@ rockchip_setup_interfaces()
 		ucidef_add_switch "switch0" \
 			"3:wan" "2:lan" "1:lan" "0:lan" "6t@eth0"
 		;;
+   embedfire,lubancat2n)
+		ucidef_set_interfaces_lan_wan "eth1 eth2 eth3" "eth0"
+		;;
 	*)
 		ucidef_set_interface_lan 'eth0' 'dhcp'
 		;;
@@ -114,6 +117,7 @@ rockchip_setup_macs()
 	armsom,sige7-v1|\
 	easepi,ars4|\
 	easepi,r1|\
+    embedfire,lubancat2n|\
 	ezpro,mrkaio-m68s|\
 	ezpro,mrkaio-m68s-plus|\
 	nsy,g68-plus|\
